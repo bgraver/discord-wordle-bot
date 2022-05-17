@@ -10,9 +10,11 @@ client = discord.Client()
 
 square_list = ['🟩', '🟨', '⬛', '⬜']
 
+
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+
 
 @client.event
 async def on_message(message):
@@ -21,6 +23,7 @@ async def on_message(message):
 
     ret = command.handle_command(message)
     print(message.author)
+    print(message.channel.id)
     if ret != '':
         if ret == 'Valid':
             await message.add_reaction('👍')

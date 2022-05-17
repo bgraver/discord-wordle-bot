@@ -1,6 +1,7 @@
 from enum import Enum
 import database
 
+
 class Squares(Enum):
     GREEN = '🟩'
     YELLOW = '🟨'
@@ -23,6 +24,7 @@ def handle_command(message):
 
 # TODO
 def leaderboard():
+    # database.leaderboard()
     return 'TODO Leaderboard'
 
 
@@ -30,6 +32,7 @@ def wordle(message):
     valid = validate_command(message.content)
     if valid is not None:
         valid['author'] = message.author.name + "#" + message.author.discriminator
+        valid['channel_id'] = message.channel.id
         database.put_scores(valid)
         return 'Valid'
 

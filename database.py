@@ -28,9 +28,10 @@ def put_scores(item):
     )
     return response
 
-    # print(item)
-    # print("{0}#{1}".format(item['author'].name, item['author'].discriminator))
-
+'''
+1) Only letting 
+'''
+# def leaderboard():
 
 
 
